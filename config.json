@@ -1,5 +1,5 @@
 {
-    "uda" : "http://localhost:4242",
+    "uda" : "http://datahub:4242",
     "datasets" : [
         {
             "name" : "wod",

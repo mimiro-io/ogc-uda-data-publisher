@@ -13,10 +13,22 @@ docker build -t mimiro/ogc-data-publisher .
 
 The service can be run as a docker container. The following command will run the service and expose it on port 9042.
 
-The configuration file is mounted as a volume. The configuration file is described in the next section.
+The configuration file is mounted as a volume. The configuration file is described in the next section. Note that the service is configured to use the `compose_default` network. This is the network that is created when you docker-compose to start a datahub and datalayer . If you are not using docker-compose you will need to change this to the network that your UDA endpoint is running on.
     
 ```bash
-docker run -p 9042:9042 -v /path/to/config.json:/root/config.json mimiro/ogc-data-publisher
+docker run --network=compose_default -p 9042:9042 -v /path/to/config.json:/root/config.json mimiro/ogc-data-publisher
+```
+
+To fetch data from the service you can use the following URL:
+
+```
+curl http://localhost:9042/datasets | jq .
+```
+
+then to get data
+
+```
+curl http://localhost:9042/datasets/jellyfish | jq .
 ```
 
 # Configuration
