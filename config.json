@@ -1,0 +1,16 @@
+{
+    "uda" : "http://localhost:4242",
+    "datasets" : [
+        {
+            "name" : "wod",
+            "type" : "featurecollections",
+            "remoteName" : "wod"
+        },
+        {
+            "name" : "jellyfish",
+            "type" : "features",
+            "remoteName" : "ocean.jellyfish",
+            "stripPropertyUrls" : true
+        }
+    ]
+}
